@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="mae">
+    <label id="DP">
+        DEPOSITO
+        
+        </label>
+    <style>
+        body{
+            display: flex;
+    justify-content: center; /* Alinha horizontalmente ao centro */
+    align-items: center; /* Alinha verticalmente ao centro */
+    height: 100vh; /* Define a altura do body como 100% da altura da viewport */
+    margin: 0; /* Remove as margens padrão do body */
+        }
+      
+
+#mae{
+align-items: center;
+background-color: aquamarine;
+
+
+
+}
+
+        
+        #remap{
+      
+display: flex;
+background-color: blue;
+justify-content: center;
+align-items: center;
+
+        }
+    #timer {
+        height: 100px;
+        font-size: 48px;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+ <div id="remap">
+    <h1>Cronômetro Regressivo</h1>
+    <div id="timer">1:20:00</div>
+ 
+    <script>
+      // Define o tempo inicial em segundos
+      var seconds = 80 * 60;
+  
+      // Função para atualizar o cronômetro
+      function updateTimer() {
+        var hours = Math.floor(seconds / 3600);
+        var minutes = Math.floor((seconds % 3600) / 60);
+        var remainingSeconds = seconds % 60;
+  
+        // Formata os segundos e minutos para terem dois dígitos
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        remainingSeconds = remainingSeconds < 10 ? '0' + remainingSeconds : remainingSeconds;
+  
+        // Atualiza o elemento HTML com o cronômetro
+        document.getElementById('timer').innerHTML = hours + ':' + minutes + ':' + remainingSeconds;
+  
+        // Decrementa os segundos
+        if (seconds > 0) {
+          seconds--;
+        } else {
+          clearInterval(timerInterval);
+          alert('Tempo esgotado!');
+        }
+      }
+  
+      // Chama a função updateTimer a cada segundo
+      var timerInterval = setInterval(updateTimer, 1000);
+    </script>
+ </div>
+</BR>
+
+    <style>
+
+        button{
+
+            width: 200px; /* Define a largura do botão */
+    height: 50px; /* Define a altura do botão */
+    font-size: 16px; /* Define o tamanho da fonte do texto do botão */
+
+
+
+        }
+        /* Estilo para ocultar a imagem inicialmente */
+        #imagem {
+            display: none;
+        
+        
+        }
+
+        #pagamento1{
+
+
+
+        }
+        
+#PAGAMENTO{
+
+
+
+}
+
+#pagamento2{
+
+flex-direction: column;
+
+}
+
+
+#localDaImagem{
+  display: flex; /* Torna o elemento um flex container */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: flex-start; /* Alinha o conteúdo no topo verticalmente */
+    margin-top: 20px; /* Adiciona uma margem superior para espaçamento */
+
+}
+
+
+    </style>
+
+
+<div id="PAGAMENTO">
+
+<div id="pagamento1">
+
+    <button onclick="exibirImagem()">
+       20R$
+    </button>
+    
+<button onclick="exibirImagem()">
+    50R$
+ </button>
+
+<button onclick="exibirImagem()">
+    100R$
+ </button>
+ 
+</div>
+
+<br>
+<div id="pagamento2">
+<button onclick="exibirImagem()">
+    200R$
+ </button>
+ 
+<button onclick="exibirImagem()">
+    500R$
+ </button>
+ 
+<button onclick="exibirImagem()">
+    1000R$
+ </button>
+ 
+
+</div>
+</div>
+
+
+<style>
+#localDaImagem{
+
+
+    
+}
+
+
+</style>
+<div id="localDaImagem"></div>
+<script>
+function exibirImagem() {
+    var localDaImagem = document.getElementById("localDaImagem");
+    var imagem = document.createElement("img");
+    imagem.src = "c:teste/WhatsApp Image 2024-03-02 at 16.15.01.jpeg"; // Substitua pelo caminho da sua imagem
+    imagem.alt = "Descrição da imagem";
+    localDaImagem.appendChild(imagem);
+}
+</script>
+   </body>
+</html>
